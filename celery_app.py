@@ -22,8 +22,8 @@ app.conf.timezone = APP_TZ
 
 # планировщик задач (Celery Beat)
 app.conf.beat_schedule = {
-    "process-sms-inbox-every-3m": {
+    "process-sms-inbox-every-2m": {
         "task": "tasks.process_sms_inbox",
-        "schedule": crontab(minute="*/3"),  # каждые 3 минуты
+        "schedule": crontab(minute="*/2"),  # каждые 2 минуты
     },
 }
