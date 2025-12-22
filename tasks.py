@@ -109,8 +109,8 @@ def process_sms_inbox():
             try:
                 cur.execute(
                     """
-                    INSERT INTO alerts_events (post_id, status, sms_text)
-                    VALUES (%s, %s, %s)
+                    INSERT INTO alerts_events (post_id, status, sms_text, created_at)
+                    VALUES (%s, %s, %s, NOW())
                     """,
                     (post_id, "new", content),
                 )
